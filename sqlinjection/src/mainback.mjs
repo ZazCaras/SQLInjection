@@ -49,12 +49,12 @@ app.get('/api/comments', async (req, res) => {
   }
 });
 
-//Insertar un Comentario
+//INSERTAR UN COMENTARIO INSEGURO
 app.post('/api/comment', async (req, res) => {
   try {
     const { usuario, comentario } = req.body;
     const fecha = new Date();
-    const query = `INSERT INTO comments (usuario, fecha, comentario) VALUES ('${usuario}', '${fecha}', '${comentario}')`
+    const query = `INSERT INTO comments (usuario, fecha, comentario) VALUES ('${usuario}', '${fecha}', '${comentario}')`;
 
     const result = await pool.query(query);
     res.status(200).json(result);
@@ -63,6 +63,20 @@ app.post('/api/comment', async (req, res) => {
     res.status(500).json({ error: 'error' });
   }
 });
+
+//INSERTAR UN COMENTARIO SEGURO
+app.post('/api/comment_potente', async (req, res) => {
+  try {
+    const { usuario, comentario } = req.body; 
+    const fecha = new Date();
+    const query = 'INSERT INTO comments (usuario, comentario, fecha) VALUES ($1, $2, $3)';
+
+    const result = await pool.query(query, [usuario, comentario, fecha]); 
+    res.status(200).json(result); 
+  } catch (error) {
+    res.status(500).json({ error: 'error' });
+  }
+})
 
 app.listen(port, () => {
   console.log(`ola`);
