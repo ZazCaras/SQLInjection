@@ -28,8 +28,6 @@ export default function FrontAntiInjection() {
     }
   }
 
-  //Deshabilitar html y js en inputs
-
   const submit = (e) => {
     e.preventDefault()
     if (isPossibleInjection(e.target.usuario.value) ||

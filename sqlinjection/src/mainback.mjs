@@ -64,7 +64,7 @@ app.post('/api/comment', async (req, res) => {
   }
 });
 
-//INSERTAR UN COMENTARIO SEGURO
+//INSERTAR UN COMENTARIO SEGURO. QUERY PARAMETRIZADO
 app.post('/api/comment_potente', async (req, res) => {
   try {
     const { usuario, comentario } = req.body; 
