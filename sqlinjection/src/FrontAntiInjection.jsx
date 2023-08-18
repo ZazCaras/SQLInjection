@@ -35,6 +35,7 @@ export default function FrontAntiInjection() {
     ) {
       return alert("Comentario bloqueado por administración. \nhttps://i.kym-cdn.com/entries/icons/facebook/000/010/566/060.jpg")
     }
+    
     axios.post('http://localhost:8888/api/comment_potente', {
         usuario: e.target.usuario.value,
         comentario: e.target.comentario.value

@@ -3,6 +3,7 @@ const app = express();
 const port = 8888; 
 import cors from 'cors'
 import pg from 'pg'
+import middleware from 'sql-injection'
 
 const { Pool } = pg
 
